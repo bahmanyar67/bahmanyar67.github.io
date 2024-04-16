@@ -56,6 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
             )
         }
 
+        if (pageName === 'register') {
+            setTimeout(
+                function () {
+                    listenRegisterPasswordChange()
+                }, 300
+            )
+        }
+
         try {
             const response = await fetch('pages/' + pageName + '.html');
             if (!response.ok) {
@@ -714,6 +722,19 @@ function measurePasswordStrength(inputId) {
     }
 }
 
+function listenRegisterPasswordChange() {
+
+    let password_input = document.getElementById('password')
+    let password_input_confirmation = document.getElementById('password_confirmation')
+    password_input.addEventListener('input', function () {
+        measurePasswordStrength('password')
+    })
+
+    password_input_confirmation.addEventListener('input', function () {
+        measurePasswordStrength('password_confirmation')
+    })
+
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     // dashboard
@@ -732,14 +753,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (page === 'register') {
         setTimeout(
             function () {
-                let password_input = document.getElementById('password')
-                let password_input_confirmation = document.getElementById('password_confirmation')
-                password_input.addEventListener('input', function () {
-                    measurePasswordStrength('password')
-                })
-                password_input_confirmation.addEventListener('input', function () {
-                    measurePasswordStrength('password_confirmation')
-                })
+                listenRegisterPasswordChange()
             }, 300
         )
     }
