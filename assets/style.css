@@ -3390,8 +3390,8 @@ select {
   background-image: url('images/home-bg.svg');
 }
 
-.bg-\[url\(\'images\/login-bg\.jpg\'\)\] {
-  background-image: url('images/login-bg.jpg');
+.bg-\[url\(\'images\/login-bg-9\.jpg\'\)\] {
+  background-image: url('images/login-bg-9.jpg');
 }
 
 .decoration-slice {
@@ -3952,11 +3952,6 @@ select {
 .text-sky-600 {
   --tw-text-opacity: 1;
   color: rgb(2 132 199 / var(--tw-text-opacity));
-}
-
-.text-violet-600 {
-  --tw-text-opacity: 1;
-  color: rgb(124 58 237 / var(--tw-text-opacity));
 }
 
 .text-white {
